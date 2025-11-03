@@ -153,3 +153,113 @@ Mesos
 
 Kubernetes
 
+# Spark Components
+## RDD (Resilient Distributed Dataset)
+
+The RDD is the fundamental data structure of Apache Spark. It represents an immutable distributed collection of objects that can be processed in parallel across a cluster.
+Each dataset in an RDD is divided into logical partitions, which can be computed on different nodes of the cluster.
+
+## Key Features:
+
+### Resilient: Can recover automatically from node failures.
+
+### Distributed: Data is spread across multiple nodes.
+
+### Immutable: Once created, it cannot be changed.
+
+### Lazy Evaluation: Transformations are executed only when an action is called.
+
+## Operations:
+
+### Transformations: Create a new RDD from an existing one (e.g., map(), filter()).
+
+### Actions: Return results to the driver or write data to storage (e.g., collect(), count()).
+
+# Spark Core
+
+Spark Core is the foundation of the entire Apache Spark framework. It provides the basic functionality such as task scheduling, memory management, fault recovery, interacting with storage systems, and monitoring jobs.
+All other Spark libraries (Spark SQL, Streaming, MLlib, GraphX) are built on top of Spark Core.
+
+## Main Responsibilities:
+
+Managing distributed execution of tasks.
+
+Handling input/output operations with HDFS or other storage systems.
+
+Enabling transformations and actions on RDDs.
+
+# Spark SQL
+
+Spark SQL is a module used for processing structured and semi-structured data. It allows users to query data using SQL syntax or through the DataFrame API.
+
+## Key Features:
+
+Integrates SQL queries with Spark’s programming APIs (Python, Java, Scala).
+
+Supports multiple data sources such as Hive, JSON, Parquet, and JDBC.
+
+Uses Catalyst Optimizer for optimizing query execution.
+
+Provides DataFrame and Dataset APIs for high-level abstraction.
+
+Example Use Case: Analyzing large datasets using SQL-like queries on distributed data.
+
+# Spark Streaming
+
+Spark Streaming enables real-time (stream) data processing in Spark. It processes live data streams received from sources like Kafka, Flume, Twitter, or TCP sockets.
+
+## Working Principle:
+
+Incoming data is divided into micro-batches.
+
+Each batch is processed using Spark’s core engine.
+
+Results are generated in real-time and pushed to storage or dashboards.
+
+## Use Cases:
+
+Real-time analytics and monitoring.
+
+Fraud detection in financial transactions.
+
+Log and event data analysis.
+
+## MLlib (Machine Learning Library)
+
+MLlib is Spark’s scalable machine learning library designed for distributed processing. It provides a rich set of machine learning algorithms and utilities.
+
+## Key Features:
+
+Supports classification, regression, clustering, and recommendation algorithms.
+
+Includes tools for feature extraction, dimensionality reduction, and model evaluation.
+
+Works seamlessly with DataFrames and RDDs.
+
+## Use Cases:
+
+Predictive analytics.
+
+Recommendation systems.
+
+Data classification and clustering.
+
+# GraphX
+
+GraphX is the component of Apache Spark for graph computation and analysis. It provides a distributed framework for working with graphs and graph-parallel computations.
+
+## Key Features:
+
+Allows users to represent data as vertices and edges.
+
+Supports built-in algorithms such as PageRank, Connected Components, and Triangle Counting.
+
+Combines ETL (Extract, Transform, Load) and graph analysis in one framework.
+
+## Use Cases:
+
+Social network analysis.
+
+Relationship-based recommendations.
+
+Network topology optimization.
