@@ -263,13 +263,13 @@ Social network analysis.
 Relationship-based recommendations.
 
 Network topology optimization.
-# 🚀 Understanding RDD, DataFrame, and Dataset in Apache Spark (with Python Examples)
+#  Understanding RDD, DataFrame, and Dataset in Apache Spark (with Python Examples)
 
 This document provides a detailed explanation of **RDD**, **DataFrame**, and **Dataset** — their **differences**, **conversions**, and **transformations** (Narrow & Wide) — all explained using **Python (PySpark)**.
 
 ---
 
-## 🧩 1. Differences Between RDD, DataFrame, and Dataset
+##  1. Differences Between RDD, DataFrame, and Dataset
 
 | Feature | RDD (Resilient Distributed Dataset) | DataFrame | Dataset |
 |----------|-------------------------------------|------------|----------|
@@ -282,15 +282,15 @@ This document provides a detailed explanation of **RDD**, **DataFrame**, and **D
 | **Serialization** | Java serialization | Optimized (Tungsten binary format) | Optimized (Encoders) |
 | **Best For** | Low-level transformations | SQL-like operations, structured data | Type-safe structured data (not in Python) |
 
-> ⚠️ Note: In **PySpark**, Datasets are not available directly (only in Scala/Java). So, we use **DataFrames** as the main abstraction for structured data.
+>  Note: In **PySpark**, Datasets are not available directly (only in Scala/Java). So, we use **DataFrames** as the main abstraction for structured data.
 
 ---
 
-## 🔄 2. Converting Between RDD, DataFrame, and Dataset
+##  2. Converting Between RDD, DataFrame, and Dataset
 
 Let’s look at conversions in **Python (PySpark)**.
 
-### ✅ a) RDD ➡️ DataFrame
+###  a) RDD ➡️ DataFrame
 
 ```python
 from pyspark.sql import SparkSession
@@ -307,7 +307,7 @@ df.show()'''python
 ```
 
 Output:
-
+```python
 pgsql
 Copy code
 +---+-----+---+
@@ -317,16 +317,18 @@ Copy code
 |  2|  Bob| 25|
 |  3|Cathy| 30|
 +---+-----+---+
-✅ b) DataFrame ➡️ RDD
+```
+## b) DataFrame ➡️ RDD
 ```python
 
 rdd_from_df = df.rdd
 print(rdd_from_df.collect())
 ```
 Output:
-
+```python
 [Row(ID=1, Name='Alice', Age=23), Row(ID=2, Name='Bob', Age=25), Row(ID=3, Name='Cathy', Age=30)]
-✅ c) DataFrame ➡️ Dataset ➡️ DataFrame
+```
+### c) DataFrame ➡️ Dataset ➡️ DataFrame
 🧠 Only supported in Scala/Java, not in PySpark.
 In PySpark, DataFrames act as Datasets of Row objects.
 
@@ -335,7 +337,7 @@ Transformations are operations applied on RDDs or DataFrames that produce a new 
 
 Lazy evaluation: Transformations are not executed until an action (like collect() or count()) is called.
 
-🔸 Common Transformations:
+## Common Transformations:
 map()
 
 filter()
