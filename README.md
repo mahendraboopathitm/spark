@@ -309,7 +309,7 @@ df.show()'''python
 Output:
 ```python
 pgsql
-Copy code
+
 +---+-----+---+
 | ID| Name|Age|
 +---+-----+---+
@@ -353,7 +353,7 @@ groupByKey()
 ## Example:
 
 ```python
-Copy code
+
 rdd = spark.sparkContext.parallelize([1, 2, 3, 4, 5])
 rdd2 = rdd.map(lambda x: x * 2)
 print(rdd2.collect())  # [2, 4, 6, 8, 10]
@@ -395,7 +395,7 @@ reduceByKey()
 Example in PySpark:
 
 ```python
-Copy code
+
 rdd = spark.sparkContext.parallelize([
     ("math", 60),
     ("science", 70),
